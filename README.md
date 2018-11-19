@@ -1,5 +1,5 @@
-# CP1404 2017 SP2 Assignment 1
-Assignment 1 for CP1404, 2017 SP2, IT@JCU
+# CP1404 2018 SP53 Assignment 1
+Assignment 1 for CP1404, 2018 SP53, IT@JCU
 
 Edit this README file, replacing this paragraph with your own assignment details.  
 At the end of the project, complete the very brief project reflection below by answering the questions (replace the `answer...` parts).  
