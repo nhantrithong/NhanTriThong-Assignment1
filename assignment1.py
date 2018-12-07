@@ -1,3 +1,6 @@
+'''Github Link:
+https://github.com/nhantrithong/NhanTriThong-Assignment1'''
+
 '''opening the songs.csv file at the start and assigning it to a global variable (FILES) for the 4 functions of menu(),list(),add(),and complete() to use.
 Global lists used to store universal values to be used by the 4 functions of menu(),list(),add(),and complete() below.'''
 input_file = open("songs.csv", "r")
