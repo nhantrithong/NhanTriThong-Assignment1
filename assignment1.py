@@ -48,3 +48,10 @@ def list():
         if "*" in status:
             count_2 += 1
     print("-" * 86)
+    print("Total number of songs:", max(list))
+    TOTAL.append(max(list))
+    print("Number of songs learnt:", max(list) - count_2)
+    print("Number of songs left to learn:", count_2)
+    REMAINDER.append(count_2)
+    print("-" * 86)
+    menu()
