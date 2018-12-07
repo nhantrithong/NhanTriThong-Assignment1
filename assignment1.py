@@ -1,13 +1,18 @@
+'''opening the songs.csv file at the start and assigning it to a global variable (FILES) for the 4 functions of menu(),list(),add(),and complete() to use.
+Global lists used to store universal values to be used by the 4 functions of menu(),list(),add(),and complete() below.'''
 input_file = open("songs.csv", "r")
 FILES = input_file.readlines()
 TOTAL = [0]
 REMAINDER = [1]
 EXPORT_LIST = []
 
+'''main() function serves the purpose of only displaying the intial message,and then moving forward directly to the menu() function'''
 def main():
     print("Songs To Learn 1.0 - by Tom Nhan")
     first = menu()
 
+'''menu() function displayes the three main options of the program for user to access the three main fucntions (L - List, A - Add, C - Complete, and Q - Quit)
+The Q - Quit option allows the user to save all the changes or input in the song list to the csv file itself, overwrting it in the process '''
 def menu():
     print("L - List songs")
     print("A - Add new song")
@@ -37,6 +42,7 @@ def menu():
         else:
             menu()
 
+'''list functions displays all the values from the songs.csv files (all stored in the FILES variable created above instead of having to directly access the csv file itself) in a neatly organized format at any point within the program, whether its before or after more data is inputed into the songs.csv file'''
 def list():
     list = []
     count = 0
@@ -62,6 +68,7 @@ def list():
     print("-" * 86)
     menu()
 
+'''add function serves the purpose of allowing the user to add data to the FILES varible which would be printed and formatted appropriately in the list() function'''
 def add():
     remove_status = "y\n"
     song_name2 = input("Enter title:")
@@ -91,6 +98,7 @@ def add():
     print("-" * 86)
     menu()
 
+'''the complete() function serves the purpose of allowing the user to mark the data or songs within the list as finished'''
 def complete():
     remove_status = "n\n"
     if min(REMAINDER) == 0:
