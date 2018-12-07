@@ -31,3 +31,20 @@ def menu():
         else:
             menu()
 
+def list():
+    list = []
+    count = 0
+    count_2 = 0
+    for lines in FILES:
+        count += 1
+        new_lines = lines.split(",")
+        song_name = new_lines[0]
+        artist_name = new_lines[1]
+        year = new_lines[2]
+        status = new_lines[3].replace("y", "*").replace("n", "").replace("\n", "")
+        list.append(count)
+        final_song_list = ("{:>2}. {:<1} {:<35} - {:<35} ({})".format(count, status, song_name, artist_name, year))
+        print(final_song_list)
+        if "*" in status:
+            count_2 += 1
+    print("-" * 86)
