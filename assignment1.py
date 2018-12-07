@@ -55,3 +55,32 @@ def list():
     REMAINDER.append(count_2)
     print("-" * 86)
     menu()
+
+def add():
+    remove_status = "y\n"
+    song_name2 = input("Enter title:")
+    while song_name2 in [""," ","  ","   "]:
+        print("Please enter a song name")
+        song_name2 = input("Enter title:")
+    artist_name2 = input("Enter artist:")
+    while artist_name2 in ["", " ","   ", "   "]:
+        print("Please enter artist name")
+        artist_name2 = input("Enter artist:")
+    flag=True
+    while (flag==True):
+        try:
+            year_2 = int(input("Enter year: "))
+            flag=False
+        except ValueError:
+            print("Invalid input, please enter a number")
+    while len(str(year_2)) < 4 or len(str(year_2)) > 4:
+        print("Please enter an appropriate year value with 4 numbers")
+        year_2 = int(input("Enter year:"))
+    if REMAINDER[-1] == 0:
+        REMAINDER.remove(REMAINDER[-1])
+    result_1 = ("{},{},{},{}".format(song_name2, artist_name2, year_2,remove_status))
+    FILES.append(result_1)
+    EXPORT_LIST.append(result_1)
+    print("{} by {} from ({}) added to song list".format(song_name2, artist_name2, year_2))
+    print("-" * 86)
+    menu()
