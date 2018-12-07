@@ -90,3 +90,37 @@ def add():
     print("{} by {} from ({}) added to song list".format(song_name2, artist_name2, year_2))
     print("-" * 86)
     menu()
+
+def complete():
+    remove_status = "n\n"
+    if min(REMAINDER) == 0:
+        print("No more songs to learn!")
+        print("-" * 86)
+        menu()
+    flag=True
+    while (flag==True):
+        try:
+            number = int(input("Enter the number of a song to be marked as learnt"))
+            flag=False
+        except ValueError:
+            print("Invalid input, please enter a number")
+    if max(TOTAL) == 0:
+        print("Please first load list and then proceed to input song number value")
+        menu()
+    while number > max(TOTAL):
+        print("Error, please re-input appropriate value")
+        number = int(input("Enter the number of a song to be marked as learnt"))
+    rows = FILES[number - 1]
+    new_rows = rows.split(",")
+    song_name3 = new_rows[0]
+    artist_name3 = new_rows[1]
+    year_3 = new_rows[2]
+    result_3 = ("{},{},{},{}".format(song_name3, artist_name3, year_3,remove_status))
+    result_4 = ("=> '{} by {} from {}' learnt".format(song_name3, artist_name3, year_3))
+    FILES.append(result_3)
+    FILES.remove(FILES[number - 1])
+    print(result_4)
+    print("-" * 86)
+    menu()
+
+main()
