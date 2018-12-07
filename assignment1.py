@@ -1,3 +1,9 @@
+input_file = open("songs.csv", "r")
+FILES = input_file.readlines()
+TOTAL = [0]
+REMAINDER = [1]
+EXPORT_LIST = []
+
 def main():
     print("Songs To Learn 1.0 - by Tom Nhan")
     first = menu()
